@@ -1,4 +1,6 @@
+using laserTagSystem.Application.Interfaces.IRepository;
 using laserTagSystem.Infrastructure.Persistence;
+using laserTagSystem.Infrastructure.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace laserTagSystem.API;
@@ -20,6 +22,8 @@ public class Program {
                 b => b.MigrationsAssembly("laserTagSystem.Infrastructure")
             );
         });
+        
+        builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
 
         var app = builder.Build();
 
