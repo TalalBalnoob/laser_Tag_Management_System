@@ -17,7 +17,7 @@ public class Program {
         {
             options.UseNpgsql(
                 builder.Configuration.GetConnectionString("DefaultConnection"),
-                b => b.MigrationsAssembly("LaserTagManagementSystem.Infrastructure")
+                b => b.MigrationsAssembly("laserTagSystem.Infrastructure")
             );
         });
 
