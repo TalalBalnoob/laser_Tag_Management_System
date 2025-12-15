@@ -6,4 +6,8 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\laserTagSystem.Domain\laserTagSystem.Domain.csproj" />
+    </ItemGroup>
+
 </Project>

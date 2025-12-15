@@ -19,7 +19,6 @@
 
     <ItemGroup>
       <ProjectReference Include="..\laserTagSystem.Application\laserTagSystem.Application.csproj" />
-      <ProjectReference Include="..\laserTagSystem.Domain\laserTagSystem.Domain.csproj" />
       <ProjectReference Include="..\laserTagSystem.Infrastructure\laserTagSystem.Infrastructure.csproj" />
     </ItemGroup>
 
