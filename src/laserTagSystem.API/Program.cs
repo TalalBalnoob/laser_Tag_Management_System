@@ -1,3 +1,6 @@
+using laserTagSystem.Infrastructure.Persistence;
+using Microsoft.EntityFrameworkCore;
+
 namespace laserTagSystem.API;
 
 public class Program {
@@ -9,6 +12,14 @@ public class Program {
         builder.Services.AddControllers();
         // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
         builder.Services.AddOpenApi();
+        
+        builder.Services.AddDbContext<AppDBContext>(options =>
+        {
+            options.UseNpgsql(
+                builder.Configuration.GetConnectionString("DefaultConnection"),
+                b => b.MigrationsAssembly("LaserTagManagementSystem.Infrastructure")
+            );
+        });
 
         var app = builder.Build();
 
