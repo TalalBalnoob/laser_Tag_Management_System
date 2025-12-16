@@ -1,7 +1,7 @@
 namespace laserTagSystem.Domain.Entity;
 
 public class Field {
-    public int Id { get; set; }
-    public int Players_capacity { get; set; }
+    public Guid Id { get; set; }
+    public int MaxPlayers { get; set; }
     public bool IsAvailable { get; set; } = true;
 }
