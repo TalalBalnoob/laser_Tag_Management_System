@@ -1,5 +1,5 @@
 using laserTagSystem.Domain.Enums;
-using MatchType = System.IO.MatchType;
+using MatchType = laserTagSystem.Domain.Enums.MatchType;
 
 namespace laserTagSystem.Domain.Entity;
 
