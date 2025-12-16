@@ -11,4 +11,5 @@ public class AppDBContext: DbContext  {
     public DbSet<Player> Players { get; set; }
     public DbSet<Team> Teams { get; set; }
     public DbSet<Field> Fields { get; set; }
+    public DbSet<Match> Matches { get; set; }
 }
