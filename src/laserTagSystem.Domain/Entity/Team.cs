@@ -4,7 +4,7 @@ public class Team {
     public Guid Id { get; set; }
     public string Name { get; set; }
 
-    public DateTime CreatedAt { get; set; } = new DateTime();
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     
-    public List<Player> Players { get; set; } = new();
+    public ICollection<TeamMember> Players { get; set; } = new List<TeamMember>();
 }
