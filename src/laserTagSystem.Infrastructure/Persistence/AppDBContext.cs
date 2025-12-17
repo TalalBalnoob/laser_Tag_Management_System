@@ -14,6 +14,8 @@ public class AppDBContext: DbContext  {
     public DbSet<Match> Matches { get; set; }
     public DbSet<TeamMember> TeamMembers { get; set; }
     public DbSet<MatchParticipant> MatchParticipants { get; set; }
+    public DbSet<PlayerScore> PlayerScores { get; set; }
+    public DbSet<MatchHistory> MatchHistories { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -29,6 +29,8 @@ public class Program {
         builder.Services.AddScoped<IMatchRepository, MatchRepository>();
         builder.Services.AddScoped<ITeamMemberRepository, TeamMemberRepository>();
         builder.Services.AddScoped<IMatchParticipantRepository, MatchParticipantRepository>();
+        builder.Services.AddScoped<IPlayerScoreRepository, PlayerScoreRepository>();
+        builder.Services.AddScoped<IMatchHistoryRepository, MatchHistoryRepository>();
 
         var app = builder.Build();
 
