@@ -12,4 +12,24 @@ public class AppDBContext: DbContext  {
     public DbSet<Team> Teams { get; set; }
     public DbSet<Field> Fields { get; set; }
     public DbSet<Match> Matches { get; set; }
+    public DbSet<TeamMember> TeamMembers { get; set; }
+    
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<TeamMember>()
+            .HasKey(tm => new { tm.TeamId, tm.PlayerId });
+
+        modelBuilder.Entity<TeamMember>()
+            .HasOne(tm => tm.Team)
+            .WithMany(t => t.Players)
+            .HasForeignKey(tm => tm.TeamId);
+
+        modelBuilder.Entity<TeamMember>()
+            .HasOne(tm => tm.Player)
+            .WithMany(p => p.Teams)
+            .HasForeignKey(tm => tm.PlayerId);
+    }
+
+    
+   
 }
