@@ -13,6 +13,7 @@ public class AppDBContext: DbContext  {
     public DbSet<Field> Fields { get; set; }
     public DbSet<Match> Matches { get; set; }
     public DbSet<TeamMember> TeamMembers { get; set; }
+    public DbSet<MatchParticipant> MatchParticipants { get; set; }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
