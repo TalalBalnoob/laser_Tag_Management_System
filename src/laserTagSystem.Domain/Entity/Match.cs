@@ -13,4 +13,6 @@ public class Match {
     
     public MatchType Type { get; set; }   // TeamBased, FreeForAll
     public MatchStatus Status { get; set; } // Scheduled, Ongoing, Finished
+
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }
