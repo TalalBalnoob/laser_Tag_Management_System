@@ -39,3 +39,6 @@ Thumbs.db
 ## Backup
 *.bak
 *.tmp
+
+#other 
+.TODO.md
