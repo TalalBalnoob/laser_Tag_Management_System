@@ -7,10 +7,10 @@ namespace laserTagSystem.Infrastructure.Repository;
 
 public class FieldRepository (AppDBContext _db): IFieldRepository {
     
-    public async Task<Field> AddAsync(Field team) {
-        _db.Fields.Add(team);
+    public async Task<Field> AddAsync(Field field) {
+        _db.Fields.Add(field);
         await _db.SaveChangesAsync();
-        return team;
+        return field;
     }
 
     public async Task<List<Field>> GetAllAsync() {
