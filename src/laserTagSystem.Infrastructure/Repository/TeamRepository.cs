@@ -16,4 +16,20 @@ public class TeamRepository (AppDBContext _db): ITeamRepository {
     public async Task<List<Team>> GetAllAsync() {
         return await _db.Teams.ToListAsync();
     }
+    
+    public async Task<Team> UpdateAsync(Team team) {
+        var Team = _db.Teams.Update(team).Entity;
+        await _db.SaveChangesAsync();
+        return Team;
+
+    }
+
+    public void DeleteAsync(Team team) {
+        _db.Teams.Remove(team);
+        _db.SaveChangesAsync();
+    }
+
+    public async Task<Team?> GetByIdAsync(Guid id) {
+        return await _db.Teams.FindAsync(id);
+    }
 }
