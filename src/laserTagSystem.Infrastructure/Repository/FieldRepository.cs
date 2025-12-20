@@ -21,9 +21,9 @@ public class FieldRepository (AppDBContext _db): IFieldRepository {
 
     }
 
-    public async void DeleteAsync(Field field) {
+    public void DeleteAsync(Field field) {
         _db.Fields.Remove(field);
-        await _db.SaveChangesAsync();
+        _db.SaveChangesAsync();
     }
 
     public async Task<List<Field>> GetAllAsync() {
