@@ -16,4 +16,22 @@ public class MatchParticipantRepository (AppDBContext _db): IMatchParticipantRep
     public async Task<List<MatchParticipant>> GetAllAsync() {
         return await _db.MatchParticipants.ToListAsync();
     }
+    
+    public async Task<MatchParticipant> UpdateAsync(MatchParticipant matchParticipant) {
+        var MatchParticipant = _db.MatchParticipants.Update(matchParticipant).Entity;
+        await _db.SaveChangesAsync();
+        return MatchParticipant;
+
+    }
+
+    public void DeleteAsync(MatchParticipant matchParticipant) {
+        _db.MatchParticipants.Remove(matchParticipant);
+        _db.SaveChangesAsync();
+    }
+
+    
+
+    public async Task<MatchParticipant?> GetByIdAsync(Guid id) {
+        return await _db.MatchParticipants.FindAsync(id);
+    }
 }

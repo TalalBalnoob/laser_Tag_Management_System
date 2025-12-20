@@ -12,8 +12,26 @@ public class MatchRepository (AppDBContext _db): IMatchRepository {
         await _db.SaveChangesAsync();
         return match;
     }
-
+    
     public async Task<List<Match>> GetAllAsync() {
         return await _db.Matches.ToListAsync();
+    }
+    
+    public async Task<Match> UpdateAsync(Match match) {
+        var Match = _db.Matches.Update(match).Entity;
+        await _db.SaveChangesAsync();
+        return Match;
+
+    }
+    
+    public void DeleteAsync(Match match) {
+        _db.Matches.Remove(match);
+        _db.SaveChangesAsync();
+    }
+
+  
+
+    public async Task<Match?> GetByIdAsync(Guid id) {
+        return await _db.Matches.FindAsync(id);
     }
 }
