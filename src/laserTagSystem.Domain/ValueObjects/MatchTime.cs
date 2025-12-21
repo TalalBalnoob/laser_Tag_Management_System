@@ -1,3 +1,5 @@
+using laserTagSystem.Domain.Exceptions;
+
 namespace laserTagSystem.Domain.ValueObjects;
 
 public sealed class MatchTime
@@ -8,7 +10,7 @@ public sealed class MatchTime
     public MatchTime(DateTime start, DateTime end)
     {
         if (end <= start)
-            throw new ArgumentException("Match end time must be after start time");
+            throw new DomainException("Match end time must be after start time");
 
         Start = start;
         End = end;
