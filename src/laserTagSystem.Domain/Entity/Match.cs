@@ -23,26 +23,34 @@ public class Match {
     public Field Field { get; set; } = null!;
 
     public void MarkOngoing() {
-        if (this.Status != MatchStatus.Scheduled) {
+        if (Status != MatchStatus.Scheduled) {
             throw new DomainException("Can't mark UnScheduled game as Ongoing");
         }
 
-        this.Status = MatchStatus.Ongoing;
+        Status = MatchStatus.Ongoing;
     }
     
     public void MarkScheduled() {
-        if (this.Status != MatchStatus.Ongoing) {
+        if (Status == MatchStatus.Ongoing) {
             throw new DomainException("Can't mark this game as Scheduled");
         }
 
-        this.Status = MatchStatus.Scheduled;
+        Status = MatchStatus.Scheduled;
+    }
+    
+    public void MarkFinshied() {
+        if (Status == MatchStatus.Ongoing) {
+            throw new DomainException("Can't finish a match that didn't start");
+        }
+
+        Status = MatchStatus.Finished;
     }
     
     public void MarkCancelled() {
-        if (this.Status != MatchStatus.Finished) {
+        if (Status != MatchStatus.Finished) {
             throw new DomainException("Can't mark Finished game as Cancelled");
         }
 
-        this.Status = MatchStatus.Cancelled;
+        Status = MatchStatus.Cancelled;
     }
 }
