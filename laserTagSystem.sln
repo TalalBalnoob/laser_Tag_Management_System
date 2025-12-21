@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "laserTagSystem.Infrastructu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "laserTagSystem.API", "src\laserTagSystem.API\laserTagSystem.API.csproj", "{9AFEBB7A-5EAC-4180-80F4-43FFDFC6123C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "laserTagSystem.Domain.Tests", "tests\laserTagSystem.Domain.Tests\laserTagSystem.Domain.Tests.csproj", "{38D44589-683C-429E-A656-24EE37269228}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{9AFEBB7A-5EAC-4180-80F4-43FFDFC6123C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AFEBB7A-5EAC-4180-80F4-43FFDFC6123C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AFEBB7A-5EAC-4180-80F4-43FFDFC6123C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38D44589-683C-429E-A656-24EE37269228}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38D44589-683C-429E-A656-24EE37269228}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38D44589-683C-429E-A656-24EE37269228}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38D44589-683C-429E-A656-24EE37269228}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
