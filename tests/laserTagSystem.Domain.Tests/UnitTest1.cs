@@ -7,18 +7,8 @@ using NUnit;
 namespace laserTagSystem.Domain.Tests;
 
 public class Tests {
-    // [SetUp]
-    // public void Setup() {
-    // }
-    //
-    // [Test]
-    // public void Test1() {
-    //     Assert.Pass();
-    // }
-    
     [Test]
-    public void MatchTime_EndBeforeStart_ShouldThrow()
-    {
+    public void MatchTime_EndBeforeStart_ShouldThrow() {
         var start = DateTime.UtcNow;
         var end = start.AddMinutes(-30);
 
@@ -31,7 +21,10 @@ public class Tests {
         var match = new Match();
 
         match.MarkScheduled();
-        Assert.Equals(MatchStatus.Scheduled, match.Status);
+        Assert.That(MatchStatus.Scheduled,Is.EqualTo(match.Status));
+        match.MarkOngoing();
+        Assert.That(MatchStatus.Ongoing,Is.EqualTo(match.Status));
+
     }
 
 }
